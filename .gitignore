@@ -172,3 +172,12 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore Python virtual environments
+venv/
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore build metadata
+*.egg-info/
