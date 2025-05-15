@@ -44,43 +44,52 @@ ML_Project/
 Follow these steps to run the project locally:
 
 ### 1. Clone the Repository
+```bash
 git clone https://github.com/wildchaser1703/ML_Project.git
 cd ML_Project
-
+```
 
 ### 2. Create a Virtual Environment
+```bash
 python -m venv venv
-
+```
 
 ### 3. Activate the Environment
+```bash
 **On Windows:**
 venv\Scripts\activate
 **On macOS/Linux:**
-
+source venv/bin/activate
+```
 
 ### 4. Install Dependencies
+```bash
 pip install -r requirements.txt
-
+```
 
 ---
 
 ## 🧪 Running the Pipeline
 ### Step 1: Run Data Ingestion
+```bash
 python src/components/data_ingestion.py
-
+```
 - Reads `data/stud.csv`
 - Splits into train and test datasets
 - Saves files in the `artifacts/` folder
 
 ### Step 2: Run Data Transformation
+```bash
 python src/components/data_transformation.py
-
+```
 - Encodes categorical features
 - Applies feature scaling
 - Saves numpy arrays and transformer pipeline
 
 ### Step 3: Run Model Training
-
+```bash
+python src/components/model_trainer.py
+```
 - Trains a regression/classification model
 - Evaluates performance
 - Saves the final model in `artifacts/`
@@ -109,16 +118,9 @@ python src/components/data_transformation.py
 
 ---
 
-## 👩‍💻 Author
-
-**Toshali Mohapatra**  
-📧 toshalimohapatra1@gmail.com  
-🔗 [GitHub: wildchaser1703](https://github.com/wildchaser1703)
-
----
 ## 📄 License
-### This project is licensed under the MIT License.
----
+This project is licensed under the MIT License.
+
 ⭐ If you found this project useful, consider starring the repo and sharing it!
 
 
