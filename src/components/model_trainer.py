@@ -48,8 +48,47 @@ class ModelTrainer:
                            "AdaBoost Regressor": AdaBoostRegressor(),
                     }
 
+                    params = {
+                          "Decision Tree Regressor": {
+                              "criterion": ["squared_error", "friedman_mse", "absolute_error", "poisson"],
+                            #   "splitter": ["best", "random"],
+                          },
+                          "Random Forest Regressor": {
+                              "n_estimators": [10, 50, 100],
+                              "max_features": ["sqrt", "log2"],
+                          },
+                          "XGBoost Regressor": {
+                              "learning_rate": [0.01, 0.1, 0.2],
+                              "n_estimators": [100, 200, 300],
+                            #   "max_depth": [3, 5, 7],
+                          },
+                          "CatBoost Regressor": {
+                              "iterations": [100, 200],
+                              "depth": [3, 5, 7],
+                              "learning_rate": [0.01, 0.1],
+                          },
+                          "Gradient Boosting Regressor": {
+                              "n_estimators": [100, 200],
+                              "learning_rate": [0.01, 0.1],
+                            #   "max_depth": [3, 5, 7],
+                          },
+                          "AdaBoost Regressor": {
+                              "n_estimators": [50, 100],
+                              "learning_rate": [0.01, 0.1],
+                          },
+                          "KNeighbors Regressor": {
+                              "n_neighbors": [3, 5, 7],
+                              "weights": ["uniform", "distance"],
+                          },
+                          "Linear Regression": {
+                                "fit_intercept": [True, False],
+                                "positive": [True, False],        
+                          },
+
+                    }
+
                     model_report: dict = evaluate_models(X_train = X_train, y_train = y_train, X_test = X_test,
-                                                        y_test = y_test, models = models)
+                                                        y_test = y_test, models = models, params = params)
                     
                     #To get best model score from dict
                     best_model_score = max(sorted(model_report.values()))
