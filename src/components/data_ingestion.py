@@ -33,6 +33,15 @@ class DataIngestion:
             logging.info("Read the dataset as a pandas dataframe")
             if not os.path.exists("notebook/data/stud.csv"):
                 logging.error("File not found: notebook/data/stud.csv")
+            cat_cols = df.select_dtypes(include=["object"]).columns
+            for col in cat_cols:
+                df[col] = (
+                    df[col]
+                    .replace({None: "None"})  # Replace Python None
+                    .fillna("None")           # Replace NaN
+                    .astype("category")       # Convert to categorical dtype
+                )
+            logging.info(f"Handled missing values and typecasting for columns: {list(cat_cols)}")
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok = True)
             df.to_csv(self.ingestion_config.train_data_path, index = False, header = True)
             logging.info("Train test split initiated")
