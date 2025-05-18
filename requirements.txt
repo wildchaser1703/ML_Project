@@ -26,7 +26,6 @@ kiwisolver==1.4.8
 MarkupSafe==3.0.2
 matplotlib==3.10.3
 matplotlib-inline==0.1.7
--e git+https://github.com/wildchaser1703/ML_Project.git@20030691017d2eba05c4c69708bfa2319cedf34c#egg=ML_Project
 narwhals==1.39.0
 nest-asyncio==1.6.0
 numpy==2.2.5
