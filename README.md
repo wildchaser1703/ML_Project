@@ -19,22 +19,30 @@ This project aims to build a machine learning pipeline that predicts student per
 
 ```yaml
 ML_Project/
-├── artifacts/               # Stores train.csv, test.csv, and final model.pkl
-├── data/
-│   └── stud.csv             # Raw dataset
-├── notebooks/
-│   └── student-performance.ipynb  # EDA and experimentation
-├── src/
-│   ├── components/
-│   │   ├── data_ingestion.py      # Reads and splits the dataset
-│   │   ├── data_transformation.py # Transforms categorical & numerical data
-│   │   └── model_trainer.py       # Model training logic
-│   ├── exception.py               # Custom exception handling
-│   ├── logger.py                  # Logger for debugging and tracking
-│   └── utils.py                   # Utility functions
-├── requirements.txt         # Python dependencies
-├── setup.py                 # Package setup file
-└── README.md                # You're reading it!
+├── .ebextensions/             # AWS Elastic Beanstalk configuration files
+├── .github/
+│   └── workflows/             # GitHub Actions workflows
+├── catboost_info/             # CatBoost training logs and metadata
+├── notebook/                  # Jupyter notebooks for exploration and experimentation
+├── src/                       # Source code for the ML pipeline
+│   ├── components/            # Core components like data ingestion, transformation, and model training
+│   ├── exception.py           # Custom exception classes
+│   ├── logger.py              # Logging configuration and utilities
+│   ├── pipeline/
+│   │   ├── predict_pipeline.py  # Prediction pipeline logic
+│   │   └── train_pipeline.py    # Training pipeline logic
+│   ├── utils.py               # Utility functions
+│   └── __init__.py            # Package initializer
+├── templates/                 # HTML templates for the Flask web application
+│   ├── home.html              # Home page template
+│   └── index.html             # Index page template
+├── .gitignore                 # Specifies files and directories to be ignored by Git
+├── Procfile                   # Specifies the command to run the application on Heroku or similar platforms
+├── README.md                  # Project overview and documentation
+├── application.py             # Flask application entry point
+├── requirements.txt           # Python dependencies
+└── setup.py                   # Package installation script
+
 ```
 
 ---
